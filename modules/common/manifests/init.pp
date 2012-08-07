@@ -24,14 +24,13 @@ class common {
     pin        => '1001',
     key        => 'CD2EFD2A',
     key_server => 'keys.gnupg.net',
-    notify     => Exec['apt_update'],
   }
 
-  cron {
-    'apt-update':
-      command => '/usr/bin/apt-get update',
-      user    => root,
-      hour    => 3,
-      minute  => 25,
+  cron { 'apt-update':
+    command => '/usr/bin/apt-get update',
+    user    => root,
+    hour    => 3,
+    minute  => 25,
   }
+
 }
